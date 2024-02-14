@@ -81,7 +81,7 @@ $house->addRoom($room3);
 $totalVolume = $house->getTotalVolume();
 $price = $house->getPrice();
  
-// Toon resultaten
+
 echo "Inhoud van de kamers: \n";
 foreach ($house->getRooms() as $room) {
     echo "Lengte: " . $room->getLength() . "m, Breedte: " . $room->getWidth() . "m, Hoogte: " . $room->getHeight() . "m\n";
@@ -89,4 +89,4 @@ foreach ($house->getRooms() as $room) {
 echo "Totaal volume: " . $totalVolume . "m^3\n";
 echo "Prijs van het huis is: " . $price . " euro\n";
  
-?>\
+?>
