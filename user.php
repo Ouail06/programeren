@@ -9,8 +9,11 @@ class user{
         
         $this->username = $un;
         $this->role = $role;
+        $this->password = $password;
+        $this->email = $email;
     }
 
 }
+
 
 ?>
