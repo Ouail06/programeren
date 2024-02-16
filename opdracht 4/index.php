@@ -1,74 +1,18 @@
-<?php 
-abstract class Product {
-    protected $naam;
-    protected $inkoopprijs;
-    protected $btw;
-    protected $omschrijving;
+<?php
+require_once 'Music.php';
+require_once 'Film.php';
+require_once 'Game.php';
+require_once 'ProductList.php';
 
-    public function __construct($naam, $inkoopprijs, $btw, $omschrijving) {
-        $this->naam = $naam;
-        $this->inkoopprijs = $inkoopprijs;
-        $this->btw = $btw;
-        $this->omschrijving = $omschrijving;
-    }
+// Voorbeeld van het gebruik
+$music = new Music("Best of 2023", 10, 0.21, "Top hits", "Various Artists", ["Song 1", "Song 2", "Song 3"]);
+$film = new Film("Avengers", 15, 0.21, "Action movie", "Blu-ray");
+$game = new Game("Fortnite", 20, 0.21, "Popular game", "Action", "Minimum requirements: ...");
 
-    abstract public function berekenVerkoopprijs();
+$productList = new ProductList();
+$productList->addProduct($music);
+$productList->addProduct($film);
+$productList->addProduct($game);
 
-    abstract public function getProductInformatie();
-}
-class Music extends Product {
-    private $artiest;
-    private $nummers;
-
-    public function __construct($naam, $inkoopprijs, $btw, $omschrijving, $artiest, $nummers) {
-        parent::__construct($naam, $inkoopprijs, $btw, $omschrijving);
-        $this->artiest = $artiest;
-        $this->nummers = $nummers;
-    }
-
-    public function berekenVerkoopprijs() {
-        // Implementeer verkoopprijsberekening voor muziek
-    }
-
-    public function getProductInformatie() {
-        // Implementeer productinformatie voor muziek
-    }
-}
-
-class Film extends Product {
-    private $kwaliteit;
-
-    public function __construct($naam, $inkoopprijs, $btw, $omschrijving, $kwaliteit) {
-        parent::__construct($naam, $inkoopprijs, $btw, $omschrijving);
-        $this->kwaliteit = $kwaliteit;
-    }
-
-    public function berekenVerkoopprijs() {
-        // Implementeer verkoopprijsberekening voor films
-    }
-
-    public function getProductInformatie() {
-        // Implementeer productinformatie voor films
-    }
-}
-
-class Game extends Product {
-    private $genre;
-    private $minimaleHardwareEisen;
-
-    public function __construct($naam, $inkoopprijs, $btw, $omschrijving, $genre, $minimaleHardwareEisen) {
-        parent::__construct($naam, $inkoopprijs, $btw, $omschrijving);
-        $this->genre = $genre;
-        $this->minimaleHardwareEisen = $minimaleHardwareEisen;
-    }
-
-    public function berekenVerkoopprijs() {
-        // Implementeer verkoopprijsberekening voor games
-    }
-
-    public function getProductInformatie() {
-        // Implementeer productinformatie voor games
-    }
-}
-
+$productList->getProductTable();
 ?>
