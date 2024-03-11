@@ -1,4 +1,7 @@
 <?php 
+
+namespace Programeren\classes;
+
 class Database{
 
     private $user = "root";
@@ -7,6 +10,6 @@ class Database{
     private $hostname = "localhost";
 }
 
-public function  __construct()
+ 
 
 ?>

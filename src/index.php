@@ -18,9 +18,13 @@
 	<br />
 	<?php
 
-    require_once 'classes/user.php';
+    //require_once 'classes/user.php';
+	require "../vendor/autoload.php";
+
+	use Programeren\classes\User;
 
     $user = new User();
+
 
 	// Activeer de session
 	session_start();
